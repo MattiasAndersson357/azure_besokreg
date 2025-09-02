@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Enter your name and email</h2>
+
+    <div>
+      <form class="form">
+        <div>
+          <label for="fname"> Name: </label>
+          <input type="text" id="fname" name="fname" placeholder="e.g. Per Persson" required>
+        </div>
+    
+        <div>
+          <label for="email"> Email: </label>
+          <input type="email" id="email" name="email" placeholder="e.g. test@test.com" required>
+        </div>
+
+        <br>
+    
+        <div>
+          <button type="submit"> Submit </button>
+        </div>
+    
+      </form>
+    </div>
+
+    <script>
+      const formEl = document.querySelector('.form')
+      formEl.addEventListener('submit', event => {
+        event.preventDefault();
+
+        const formData = new FormData(formdata)
+
+        fetch('api', { // api-adress
+          method: 'POST',
+          body: formData
+        })
+      });
+    </script>
+
+    </body>
+    </html>
