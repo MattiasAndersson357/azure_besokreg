@@ -21,6 +21,9 @@ public class Besok
     [Function("Besokreg")]
     public async Task<OutputType> Run([HttpTrigger(AuthorizationLevel.Anonymous, "post")] HttpRequestData req)
     {
+        
+        _logger.LogInformation("Enter backend");
+    
         var dto = await JsonSerializer.DeserializeAsync<BesokDto>(req.Body, JsonOpts);
 
         var name  = (dto?.Name  ?? "").Trim();
@@ -29,12 +32,15 @@ public class Besok
         if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(email))
         {
             var bad = req.CreateResponse(HttpStatusCode.BadRequest);
+            _logger.LogError("Bad request");
             await bad.WriteAsJsonAsync(new { ok = false, error = "Name and email required to function" });
             return new OutputType { HttpResponse = bad };
         }
 
         var response = req.CreateResponse(HttpStatusCode.OK);
         await response.WriteAsJsonAsync(new { ok = true, saved = new { name, email } });
+        
+        _logger.LogInformation("OK request");
 
         return new OutputType
         {
