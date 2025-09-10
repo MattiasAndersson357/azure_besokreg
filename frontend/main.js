@@ -9,7 +9,7 @@ const formEl = document.querySelector('.form');
         
 
         try {
-          const res = await fetch('https://function-individuella-ghgsevcnfdcdbqhs.uksouth-01.azurewebsites.net/api/Besokreg?code=NayxWJJ1o75jD4QeYtOW8HDJYPKjWOOQUi_jIkJStbUZAzFuP9DuUA==', {
+          const res = await fetch('https://function-individuella-ghgsevcnfdcdbqhs.uksouth-01.azurewebsites.net/Besokreg?code=NayxWJJ1o75jD4QeYtOW8HDJYPKjWOOQUi_jIkJStbUZAzFuP9DuUA==', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
