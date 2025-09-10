@@ -9,7 +9,7 @@ const formEl = document.querySelector('.form');
         
 
         try {
-          const res = await fetch('http://localhost:7071/api/Besokreg', {
+          const res = await fetch('https://function-individuella-ghgsevcnfdcdbqhs.uksouth-01.azurewebsites.net/api/Besokreg?', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
