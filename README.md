@@ -12,29 +12,11 @@ And if the input data is a success it will save the data in a Azure SQL database
 ### Dependencies
 
 * This will work on Windows 11, but should work on Win10, macOS and on linux.
-* Must have Node.js preferably v.18x or later that have 'npm'.
-* Azure Functions Core Tools, which you can find in Visual Studio Code or you can use Azure CLI.
 
-### Configuration
-* You will need Azure SQL for best use and then get your connectionstring which will be in the overview in your Azure SQL.
-* In the project create a ```local.settings.json``` and copy and paste this json data
-  ```{
-  "IsEncrypted": false,
-  "Values": {
-    "AzureWebJobsStorage": "",
-    "ConnectionStrings:SqlConnectionString": "Your-connectionstring"
-  }
-}```
-* In ```"ConnectionStrings:SqlConnectionString": "Your-connectionstring"``` you should put your Azure SQL connectionstring. Do not share your connectionstring!
 
 ### Installing
 
 * Visual Studio Code - download on their website (preferably latest version)
-* Node.js - download on their website (v.18 or later)
-* Azure Functions Core Tools, you can use VSCode terminal to download using this: ```npm install -g azure-functions-core-tools@4 --unsafe-perm true```
-  Or search in extension-browser in VSCode
-* To create Azure SQL, you'll need to have Azure account on 'Azure Portal'
-* Connectionstring to connect to your database
 
 ### Executing program
 
